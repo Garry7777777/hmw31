@@ -1,47 +1,48 @@
 package skypro.service;
 
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import skypro.dao.EmployeeDAO;
+import skypro.dao.EmployeeRepo;
 import skypro.entity.Employee;
 import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
-    private EmployeeDAO EmployeeDAO;
-    public EmployeeServiceImpl(EmployeeDAO EmployeeDAO) {
-        this.EmployeeDAO = EmployeeDAO;
+    private EmployeeRepo employeeRepo;
+
+    public EmployeeServiceImpl(EmployeeRepo employeeRepo) {
+        this.employeeRepo = employeeRepo;
     }
 
     @Override
-    @Transactional
     public List<Employee> getEmployees() {
-        return EmployeeDAO.getEmployees();
+        return employeeRepo.findAll();
     }
 
     @Override
-    @Transactional
     public Employee getEmployeeById(int id) {
-        return EmployeeDAO.getEmployeeById(id);
+        return employeeRepo.findById(id).get();
     }
 
     @Override
-    @Transactional
     public void addEmployee(Employee employee) {
-        EmployeeDAO.addEmployee(employee);
+        employeeRepo.save(employee);
     }
 
     @Override
-    @Transactional
     public void updateEmployee(Employee employee) {
-        EmployeeDAO.updateEmployee(employee);
+        employeeRepo.save(employee);
     }
 
     @Override
-    @Transactional
     public void deleteEmployee(int id) {
-        EmployeeDAO.deleteEmployee(id);
+        employeeRepo.deleteById(id);
     }
+
+    @Override
+    public List<Employee> getEmployeesByName(String name) {
+        return employeeRepo.findAllByName(name);
+    }
+
 
 }
