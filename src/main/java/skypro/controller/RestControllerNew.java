@@ -13,16 +13,19 @@ public class RestControllerNew {
     private EmployeeService employeeService;
 
     public RestControllerNew(EmployeeService employeeService) {
+
         this.employeeService = employeeService;
     }
 
     @GetMapping("/employees")
     public List<Employee> getEmployees() {
+
         return employeeService.getEmployees();
     }
 
     @GetMapping("/employees/{id}")
     public Employee getEmployeeById(@PathVariable int id) {
+
         return employeeService.getEmployeeById(id);
     }
 
