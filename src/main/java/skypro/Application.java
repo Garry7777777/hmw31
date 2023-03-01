@@ -1,13 +1,13 @@
-package com.example.hmw31;
+package skypro;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Hmw31Application {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(Hmw31Application.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
