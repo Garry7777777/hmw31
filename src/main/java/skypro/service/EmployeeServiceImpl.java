@@ -1,7 +1,7 @@
 package skypro.service;
 
 import org.springframework.stereotype.Service;
-import skypro.dao.EmployeeRepo;
+import skypro.repo.EmployeeRepo;
 import skypro.entity.Employee;
 import java.util.List;
 

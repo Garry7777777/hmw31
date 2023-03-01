@@ -1,4 +1,4 @@
-package skypro.dao;
+package skypro.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import skypro.entity.Employee;
